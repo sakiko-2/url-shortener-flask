@@ -5,13 +5,27 @@
       {% block title %}
       {% endblock %}
     </title>
-    <link rel="stylesheet" href="../static/assets/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
+    <link res="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='feather.min.js') }}" type="text/javascript"></script>
 </head>
 
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{ url_for('home')}}">
+      <i data-feather="scissors"></i>
+      <h3>URL Shortener</h3>
+    </a>
+  </div>
+</nav>
+
 {% for message in get_flashed_messages() %}
-<h2>{{ message }}</h2>
+  <article class="message is-warning">
+    <div class="message-body">{{ message }}</div>
+  </article>
 {% endfor %}
 
 {% block main %}
 {% endblock %}
+
+<script>feather.replace()</script>

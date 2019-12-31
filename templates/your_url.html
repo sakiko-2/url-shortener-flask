@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block main %}
-
-<h1>Your URL</h1>
-
-<h2>{{ code }}</h2>
-
+  <section class="your-url section">
+    <h1 class="title is-2 has-text-centered">Your URL</h1>
+    <div class="panel">
+      <a class="panel-block code">{{ code }}</a>
+    </div>
+  </section>
 {% endblock %}

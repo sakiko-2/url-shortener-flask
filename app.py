@@ -8,7 +8,7 @@ app.secret_key = 'h1230qw3rpoaijer'
 
 @app.route('/')
 def home():
-    return render_template('home.html', codes=session.keys())
+    return render_template('home.html', codes=sorted(session.keys()))
 
 @app.route('/your-url', methods=['GET', 'POST'])
 def your_url():
