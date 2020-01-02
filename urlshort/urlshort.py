@@ -7,7 +7,10 @@ bp = Blueprint('urlshort',__name__)
 
 @bp.route('/')
 def home():
-    return render_template('home.html', codes=sorted(session.keys()))
+    sorted_codes = sorted(session.keys())
+    if '_flashes' in sorted_codes:
+        sorted_codes.remove('_flashes')
+    return render_template('home.html', codes=sorted_codes)
 
 @bp.route('/your-url', methods=['GET', 'POST'])
 def your_url():
