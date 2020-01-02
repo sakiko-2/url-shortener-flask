@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %} 
-  
-{% endblock %}
+{% block description %}<meta name="description" content="The short code you have created now">{% endblock %}
+{% block title %}Your URL{% endblock %}
 
 {% block main %}
   <section class="your-url section">
     <h1 class="title is-2 has-text-centered">Your URL</h1>
-    <div class="panel">
-      <a class="panel-block code">{{ code }}</a>
+    <div class="container your-url__container">
+      <div class="panel your-url__panel is-size-4">
+        <a class="panel-block code">{{ code }}</a>
+      </div>
     </div>
   </section>
 {% endblock %}

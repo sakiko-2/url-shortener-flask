@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title %} 
-  Page Not Found
-{% endblock %}
+{% block description %}<meta name="description" content="Page not found">{% endblock %}
+{% block title %}Page not found{% endblock %}
 
 {% block main %}
-  <section class="section">
-    <h1 class="title is-2 has-text-centered">Not Found</h1>
-
-    <p>The page you are looking for does not exist.</p>
-
-    <p><a href="{{ url_for('urlshort.home')}}">Home</a></p>
+  <section class="not-found section has-text-centered">
+    <h1 class="title is-2 is-marginless">Page Not Found</h1>
+    <div class="container not-found__container">
+      <p class="is-size-5">We can't seem to find the page you're looking for.</p>
+      <p><a class="button is-black is-rounded not-found__button" href="{{ url_for('urlshort.home')}}">Home</a></p>
+    </div>
   </section>
 {% endblock %}

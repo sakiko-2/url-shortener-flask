@@ -1,0 +1,47 @@
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* page_not_found */
+.not-found__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.not-found__button {
+  margin-top: 30%;
+  margin-bottom: -50%;
+}
+
+/* your_url */
+.your-url {
+  align-items: center;
+}
+
+.your-url__container {
+  display: flex;
+  align-items: center;
+  min-width: 50%;
+}
+
+.your-url__panel {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .your-url__container {
+    min-width: 90%;
+  }
+}

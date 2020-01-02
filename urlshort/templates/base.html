@@ -1,31 +1,38 @@
-<head>
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-      {% block title %}
-      {% endblock %}
-    </title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
-    <link res="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <script src="{{ url_for('static', filename='feather.min.js') }}" type="text/javascript"></script>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% block description %}{% endblock %}
+      <title>{% block title %}{% endblock %}</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+      <script src="{{ url_for('static', filename='feather.min.js') }}" type="text/javascript"></script>
+  </head>
 
-<nav class="navbar is-black" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="{{ url_for('urlshort.home')}}">
-      <i data-feather="scissors"></i>
-      <h3>URL Shortener</h3>
-    </a>
-  </div>
-</nav>
+  <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{ url_for('urlshort.home')}}">
+        <i data-feather="scissors"></i>
+        <h3>URL Shortener</h3>
+      </a>
+    </div>
+  </nav>
 
-{% for message in get_flashed_messages() %}
-  <article class="message is-warning">
-    <div class="message-body">{{ message }}</div>
-  </article>
-{% endfor %}
+  {% for message in get_flashed_messages() %}
+    <article class="message is-warning">
+      <div class="message-body">{{ message }}</div>
+    </article>
+  {% endfor %}
 
-{% block main %}
-{% endblock %}
+  {% block main %}
+  {% endblock %}
 
-<script>feather.replace()</script>
+  <footer class="footer">
+    <div class="content has-text-centered is-size-7">
+      &copy; 2020 Sakiko. All rights reserved.
+    </div>
+  </footer>
+
+  <script>feather.replace()</script>
+</html>
